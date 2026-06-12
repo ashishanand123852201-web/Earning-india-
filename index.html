@@ -14,10 +14,10 @@
 <body class="bg-slate-950 text-white font-sans min-h-screen relative overflow-x-hidden selection:bg-blue-500/30">
 
     <div id="authScreen" class="min-h-screen flex flex-col justify-center items-center px-4 py-12 relative z-10">
-        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none"></div>
-        <div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 translate-y-1/2 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl pointer-events-none"></div>
+        <div class="absolute top-1/4 left-1/2 -translate-x-1/2 -translate-y-1/2 w-72 h-72 bg-blue-500/10 rounded-full blur-3xl pointer-events-none -z-10"></div>
+        <div class="absolute bottom-1/4 left-1/2 -translate-x-1/2 translate-y-1/2 w-64 h-64 bg-teal-500/5 rounded-full blur-3xl pointer-events-none -z-10"></div>
 
-        <div class="w-full max-w-sm bg-slate-900/40 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 shadow-2xl space-y-6 relative">
+        <div class="w-full max-w-sm bg-slate-900/60 backdrop-blur-xl border border-white/10 rounded-[2.5rem] p-8 shadow-2xl space-y-6 relative z-20">
             
             <div class="text-center space-y-2">
                 <div class="w-16 h-16 bg-gradient-to-tr from-blue-500 to-indigo-600 rounded-2xl flex items-center justify-center text-3xl mx-auto shadow-xl shadow-blue-500/10 border border-white/10">
@@ -46,7 +46,7 @@
             </div>
 
             <div class="space-y-3 pt-2">
-                <button id="primaryAuthBtn" onclick="handlePrimaryAuthAction()" class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-black py-4 rounded-2xl shadow-xl shadow-blue-500/10 active:scale-[0.98] transition-all uppercase tracking-wider text-xs">
+                <button id="primaryAuthBtn" onclick="handlePrimaryAuthAction()" class="w-full bg-gradient-to-r from-blue-500 to-indigo-600 hover:from-blue-600 hover:to-indigo-700 text-white font-black py-4 rounded-2xl shadow-xl shadow-blue-500/10 active:scale-[0.98] transition-all uppercase tracking-wider text-xs cursor-pointer">
                     Secure Authorization
                 </button>
                 
@@ -124,7 +124,7 @@
                             <p class="text-gray-400">Node Cost: <span class="text-emerald-400 font-black">₹0</span></p>
                             <p class="text-gray-400 col-span-2">Deployment Cycle: <span class="text-gray-300 font-medium">3 Days</span></p>
                         </div>
-                        <button onclick="triggerNodeDeployment(0, 12, 'Portable Water Purification')" class="w-full mt-3 bg-white/10 hover:bg-blue-600/30 text-blue-400 font-black text-[11px] py-2 rounded-xl transition-all border border-blue-500/20 uppercase tracking-wider">Deploy Free System</button>
+                        <button onclick="triggerNodeDeployment(0, 12, 'Portable Water Purification')" class="w-full mt-3 bg-white/10 hover:bg-blue-600/30 text-blue-400 font-black text-[11px] py-2 rounded-xl transition-all border border-blue-500/20 uppercase tracking-wider cursor-pointer">Deploy Free System</button>
                     </div>
                 </div>
 
@@ -137,7 +137,7 @@
                             <p class="text-gray-400">Node Cost: <span class="text-emerald-400 font-black">₹1,099</span></p>
                             <p class="text-gray-400 col-span-2">Deployment Cycle: <span class="text-gray-300 font-medium">80 Days</span></p>
                         </div>
-                        <button onclick="triggerNodeDeployment(1099, 38, 'H302 Commercial Purifier')" class="w-full mt-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-black text-[11px] py-2 rounded-xl shadow-md active:scale-95 transition-transform uppercase tracking-wider">Purchase Cluster</button>
+                        <button onclick="triggerNodeDeployment(1099, 38, 'H302 Commercial Purifier')" class="w-full mt-3 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-black text-[11px] py-2 rounded-xl shadow-md active:scale-95 transition-transform uppercase tracking-wider cursor-pointer">Purchase Cluster</button>
                     </div>
                 </div>
             </section>
@@ -151,20 +151,20 @@
                         <h3 class="font-black text-base text-white tracking-wide">Daily Relay Attendance</h3>
                         <p class="text-xs text-gray-400 mt-1 leading-relaxed">Ping the validator network node panel daily to secure your complementary ₹10 wallet reward instantly.</p>
                     </div>
-                    <button onclick="executeDailyCheckin()" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-black py-3 rounded-xl shadow-lg shadow-orange-500/20 active:scale-95 transition-transform uppercase tracking-wider text-[11px]">Verify Status (+₹10.00)</button>
+                    <button onclick="executeDailyCheckin()" class="w-full bg-gradient-to-r from-amber-500 to-orange-500 hover:from-amber-600 hover:to-orange-600 text-white font-black py-3 rounded-xl shadow-lg shadow-orange-500/20 active:scale-95 transition-transform uppercase tracking-wider text-[11px] cursor-pointer">Verify Status (+₹10.00)</button>
                 </div>
             </section>
 
             <section id="terminalTab" class="space-y-4 hidden">
                 <div class="grid grid-cols-2 gap-3">
-                    <button onclick="toggleModalControl('rechargeModal', true)" class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 p-4 rounded-2xl shadow-xl text-left flex justify-between items-center border border-white/10 active:scale-95 transition-transform group">
+                    <button onclick="toggleModalControl('rechargeModal', true)" class="bg-gradient-to-br from-blue-600 via-blue-700 to-indigo-900 p-4 rounded-2xl shadow-xl text-left flex justify-between items-center border border-white/10 active:scale-95 transition-transform group cursor-pointer">
                         <div>
                             <p class="font-black text-sm tracking-wide">Inject Funds</p>
                             <p class="text-[10px] text-blue-200 opacity-80 mt-0.5">Simulate UPI Recharge</p>
                         </div>
                         <i class="fa-solid fa-wallet text-xl text-white/30 group-hover:text-white transition-colors"></i>
                     </button>
-                    <button onclick="triggerMockSettlementRoute()" class="bg-gradient-to-br from-purple-600 via-purple-700 to-pink-900 p-4 rounded-2xl shadow-xl text-left flex justify-between items-center border border-white/10 active:scale-95 transition-transform group">
+                    <button onclick="triggerMockSettlementRoute()" class="bg-gradient-to-br from-purple-600 via-purple-700 to-pink-900 p-4 rounded-2xl shadow-xl text-left flex justify-between items-center border border-white/10 active:scale-95 transition-transform group cursor-pointer">
                         <div>
                             <p class="font-black text-sm tracking-wide">Settlement</p>
                             <p class="text-[10px] text-purple-200 opacity-80 mt-0.5">Bank Payout Link</p>
@@ -193,13 +193,13 @@
         </main>
 
         <nav class="fixed bottom-0 left-0 right-0 bg-slate-900/90 backdrop-blur-xl border-t border-white/10 shadow-2xl z-40 max-w-md mx-auto rounded-t-[2rem] flex items-center justify-around py-2.5 px-3">
-            <button onclick="routeSubTab('nodes', this)" class="bottom-nav-action flex flex-col items-center space-y-1 text-blue-400 transition-all py-1 px-4 rounded-xl">
+            <button onclick="routeSubTab('nodes', this)" class="bottom-nav-action flex flex-col items-center space-y-1 text-blue-400 transition-all py-1 px-4 rounded-xl cursor-pointer">
                 <i class="fa-solid fa-microchip text-base"></i><span class="text-[9px] font-black tracking-widest uppercase">Nodes</span>
             </button>
-            <button onclick="routeSubTab('checkin', this)" class="bottom-nav-action flex flex-col items-center space-y-1 text-gray-500 hover:text-gray-300 transition-all py-1 px-4 rounded-xl">
+            <button onclick="routeSubTab('checkin', this)" class="bottom-nav-action flex flex-col items-center space-y-1 text-gray-500 hover:text-gray-300 transition-all py-1 px-4 rounded-xl cursor-pointer">
                 <i class="fa-solid fa-calendar-check text-base"></i><span class="text-[9px] font-black tracking-widest uppercase">Check-In</span>
             </button>
-            <button onclick="routeSubTab('terminal', this)" class="bottom-nav-action flex flex-col items-center space-y-1 text-gray-500 hover:text-gray-300 transition-all py-1 px-4 rounded-xl">
+            <button onclick="routeSubTab('terminal', this)" class="bottom-nav-action flex flex-col items-center space-y-1 text-gray-500 hover:text-gray-300 transition-all py-1 px-4 rounded-xl cursor-pointer">
                 <i class="fa-solid fa-sliders text-base"></i><span class="text-[9px] font-black tracking-widest uppercase">Terminal</span>
             </button>
         </nav>
@@ -216,8 +216,8 @@
             </div>
             <input type="number" id="utrSerialCode" placeholder="Enter mock 12-digit transaction UTR" class="w-full rounded-xl border border-white/10 px-3 py-3 text-sm bg-black/40 outline-none focus:border-blue-500 text-white placeholder-gray-600">
             <div class="flex space-x-3 pt-2">
-                <button onclick="toggleModalControl('rechargeModal', false)" class="w-1/2 bg-white/5 text-gray-300 font-bold py-3 rounded-xl text-xs uppercase tracking-wider border border-white/5">Cancel</button>
-                <button onclick="executeMockDepositAction()" class="w-1/2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-black py-3 rounded-xl text-xs uppercase tracking-wider shadow-lg">Load ₹500</button>
+                <button onclick="toggleModalControl('rechargeModal', false)" class="w-1/2 bg-white/5 text-gray-300 font-bold py-3 rounded-xl text-xs uppercase tracking-wider border border-white/5 cursor-pointer">Cancel</button>
+                <button onclick="executeMockDepositAction()" class="w-1/2 bg-gradient-to-r from-blue-500 to-indigo-600 text-white font-black py-3 rounded-xl text-xs uppercase tracking-wider shadow-lg cursor-pointer">Load ₹500</button>
             </div>
         </div>
     </div>
@@ -232,4 +232,4 @@
                 <input type="text" id="bankIfscField" placeholder="Enter IFSC Code" class="w-full rounded-xl border border-white/10 px-3 py-2.5 text-sm bg-black/40 outline-none focus:border-blue-500 text-white placeholder-gray-600">
             </div>
             <div class="flex space-x-3 pt-2">
-                <button onclick="toggleModalControl('bankModal', false)" class="w-1/2 bg-white/5 text-gray-300 font-bold py-3 rounded-xl text-xs uppercase tracking-wider border border-white/
+        
