@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>QuantumEarn Pro — Smart Investment Platform</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="auth-wrap">
+  <div class="auth-card">
+    <div class="brand">
+      <div class="brand-logo">Q</div>
+      <div class="brand-name">QUANTUMEARN PRO</div>
+    </div>
+    <div class="brand-tag">Secure • Trusted • SEBI-Compliant Wealth Platform</div>
+
+    <div class="tabs" id="authTabs">
+      <button class="active" data-tab="login">Sign In</button>
+      <button data-tab="register">Register</button>
+    </div>
+
+    <!-- LOGIN FORM -->
+    <form id="loginForm" autocomplete="off">
+      <div class="field">
+        <label>Phone Number</label>
+        <span class="ico">📱</span>
+        <input type="tel" name="phone" placeholder="Enter 10-digit mobile number" maxlength="10" required/>
+      </div>
+      <div class="field">
+        <label>Password</label>
+        <span class="ico">🔒</span>
+        <input type="password" name="password" placeholder="Enter your password" required/>
+      </div>
+      <div class="field no-icon">
+        <label>Captcha Verification</label>
+        <div class="captcha-row">
+          <div class="captcha-box" id="loginCap" title="Click to refresh"></div>
+          <input type="text" name="captcha" placeholder="Type the code above" style="padding-left:14px" required/>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary">SIGN IN SECURELY</button>
+      <div class="auth-foot">
+        <a href="#" id="forgotLink">Forgot Password?</a>
+        <a href="#" data-tab="register" class="switch-tab">Register Now →</a>
+      </div>
+    </form>
+
+    <!-- REGISTER FORM -->
+    <form id="registerForm" autocomplete="off" style="display:none">
+      <div class="field">
+        <label>Full Name</label>
+        <span class="ico">👤</span>
+        <input type="text" name="name" placeholder="Enter your full name" required/>
+      </div>
+      <div class="field">
+        <label>Phone Number</label>
+        <span class="ico">📱</span>
+        <input type="tel" name="phone" placeholder="10-digit mobile number" maxlength="10" required/>
+      </div>
+      <div class="field">
+        <label>Create Password (min 6 chars)</label>
+        <span class="ico">🔒</span>
+        <input type="password" name="password" placeholder="Strong password" minlength="6" required/>
+      </div>
+      <div class="field">
+        <label>Referral Code (Optional)</label>
+        <span class="ico">🎁</span>
+        <input type="text" name="referral" placeholder="Invite code"/>
+      </div>
+      <div class="field no-icon">
+        <label>Captcha Verification</label>
+        <div class="captcha-row">
+          <div class="captcha-box" id="regCap" title="Click to refresh"></div>
+          <input type="text" name="captcha" placeholder="Type the code above" style="padding-left:14px" required/>
+        </div>
+      </div>
+      <button type="submit" class="btn-primary">CREATE MY ACCOUNT</button>
+      <div class="auth-foot">
+        <span>Already have an account?</span>
+        <a href="#" data-tab="login" class="switch-tab">Sign In →</a>
+      </div>
+    </form>
+
+    <div class="help-link">
+      Need help? <a href="#" id="helpLink">Contact 24×7 Support</a>
+    </div>
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/auth.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

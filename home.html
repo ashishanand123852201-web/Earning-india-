@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1"/>
+<title>QuantumEarn Pro — Dashboard</title>
+<link rel="stylesheet" href="css/style.css"/>
+</head>
+<body>
+<div class="app">
+  <!-- TOP BAR -->
+  <div class="topbar">
+    <div class="left">
+      <div class="brand-logo">Q</div>
+      <div>
+        <div class="title">QuantumEarn Pro</div>
+        <div style="font-size:11px;color:var(--muted)" id="topUser">Welcome</div>
+      </div>
+    </div>
+    <div style="display:flex;gap:8px">
+      <button class="icon-btn" id="btnHelp" title="Help">❓</button>
+      <button class="icon-btn" id="btnNotif" title="Notifications">🔔</button>
+    </div>
+  </div>
+
+  <!-- ============ HOME PAGE ============ -->
+  <div class="page active" id="pageHome">
+    <div class="hero">
+      <h4>TOTAL BALANCE</h4>
+      <div class="bal" id="heroBal">₹0.00</div>
+      <div class="sub">
+        <div><div class="l">Today Income</div><div class="v" id="heroToday">₹0.00</div></div>
+        <div><div class="l">Total Income</div><div class="v" id="heroTotal">₹0.00</div></div>
+      </div>
+      <div class="actions">
+        <button id="goRecharge">⬆ Recharge</button>
+        <button class="alt" id="goWithdraw">⬇ Withdraw</button>
+      </div>
+    </div>
+
+    <div class="quick-grid">
+      <div class="q" data-quick="gift"><div class="qi" style="background:linear-gradient(135deg,#f43f5e,#f59e0b)">🎁</div>Gift Code</div>
+      <div class="q" data-quick="checkin"><div class="qi" style="background:linear-gradient(135deg,#22c55e,#06b6d4)">🎡</div>Spin & Win</div>
+      <div class="q" data-quick="invest"><div class="qi">📈</div>Invest</div>
+      <div class="q" data-quick="share"><div class="qi" style="background:linear-gradient(135deg,#8b5cf6,#ec4899)">🤝</div>Invite</div>
+      <div class="q" data-quick="vip"><div class="qi" style="background:linear-gradient(135deg,#f5c542,#a06d00)">👑</div>VIP Club</div>
+      <div class="q" data-quick="news"><div class="qi" style="background:linear-gradient(135deg,#06b6d4,#3b82f6)">📰</div>Market</div>
+      <div class="q" data-quick="kyc"><div class="qi" style="background:linear-gradient(135deg,#22c55e,#10b981)">✅</div>KYC</div>
+      <div class="q" data-quick="about"><div class="qi" style="background:linear-gradient(135deg,#64748b,#334155)">ℹ️</div>About Us</div>
+    </div>
+
+    <div class="marquee">
+      <span class="ic">📢</span>
+      <div class="track"><span id="marqueeText">Loading live winner feed…</span></div>
+    </div>
+
+    <!-- Check-in Spinner -->
+    <div class="checkin-card" id="checkinCard">
+      <h3 style="font-size:15px;font-weight:700">🎡 Daily Lucky Spin</h3>
+      <p style="color:var(--muted);font-size:12.5px;margin-top:4px">Spin once per day and win ₹10 to ₹40 instantly! Use the <b style="color:var(--gold)">GO</b> button to start. Reward is credited to your wallet automatically.</p>
+      <div class="spinner-wrap">
+        <div class="spinner-pointer"></div>
+        <div class="spinner" id="spinner"></div>
+        <div class="spinner-labels" id="spinnerLabels"></div>
+        <button class="spinner-go" id="spinBtn">GO</button>
+      </div>
+      <p style="color:var(--muted);font-size:11.5px">Tip: Combine with daily check-in product to maximize earnings.</p>
+    </div>
+
+    <div class="sec-title"><h3>🔥 Featured Plans</h3><a href="#" id="viewAllPlans">View All</a></div>
+    <div id="featuredPlans"></div>
+
+    <div class="sec-title"><h3>🏆 Recent Winners</h3></div>
+    <div id="winnersList"></div>
+
+    <div style="height:60px"></div>
+  </div>
+
+  <!-- ============ INCOME PAGE ============ -->
+  <div class="page" id="pageIncome">
+    <h2 style="font-size:18px;font-weight:700;margin-bottom:14px">💼 Income Center</h2>
+    <div class="inline-tabs" id="incomeTabs">
+      <button class="active" data-itab="invest">Investment Plans</button>
+      <button data-itab="orders">My Orders</button>
+    </div>
+    <div id="investSection">
+      <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px">Choose a plan, pay once, and collect daily profit by tapping <b style="color:var(--gold)">Collect</b> on your orders page each day.</p>
+      <div id="productList"></div>
+    </div>
+    <div id="ordersSection" style="display:none">
+      <p style="font-size:12.5px;color:var(--muted);margin-bottom:10px">Your active devices. Collect once every 24 hours.</p>
+      <div id="ordersList"></div>
+    </div>
+    <div style="height:60px"></div>
+  </div>
+
+  <!-- ============ SHARE / TEAM PAGE ============ -->
+  <div class="page" id="pageShare">
+    <h2 style="font-size:18px;font-weight:700;margin-bottom:14px">🤝 Invite & Earn</h2>
+    <div class="share-card">
+      <h3 style="font-size:16px;font-weight:700">Earn 10% Commission</h3>
+      <p style="font-size:12.5px;opacity:.9;margin-top:4px">Share your referral link with friends. Earn lifetime commission on every recharge your team makes.</p>
+      <div class="qr" id="refQR"></div>
+      <div style="font-size:12px;opacity:.85">Referral Code</div>
+      <div style="font-size:22px;font-weight:800;letter-spacing:2px" id="refCode">--</div>
+      <div class="ref-link" id="refLink">https://quantumearn.pro/r/XXXX</div>
+      <button id="btnCopyLink">📋 Copy Invite Link</button>
+    </div>
+    <div class="sec-title"><h3>How it works</h3></div>
+    <div class="row"><div class="l"><div class="ri">1</div><div><div class="t">Share your link</div><div class="s">Send via WhatsApp, Telegram, Facebook or any social app</div></div></div></div>
+    <div class="row"><div class="l"><div class="ri">2</div><div><div class="t">Friend registers & recharges</div><div class="s">They sign up using your code and make a deposit</div></div></div></div>
+    <div class="row"><div class="l"><div class="ri">3</div><div><div class="t">You earn commission</div><div class="s">Get 10% L1 + 3% L2 + 1% L3 instantly credited</div></div></div></div>
+
+    <div class="sec-title"><h3>🏅 Team Stats</h3></div>
+    <div class="stat-row">
+      <div class="stat"><div class="v" id="teamL1">0</div><div class="l">Level 1</div></div>
+      <div class="stat"><div class="v" id="teamL2">0</div><div class="l">Level 2</div></div>
+      <div class="stat"><div class="v" id="teamL3">0</div><div class="l">Level 3</div></div>
+    </div>
+    <div style="height:60px"></div>
+  </div>
+
+  <!-- ============ MINE PAGE ============ -->
+  <div class="page" id="pageMine">
+    <div class="profile">
+      <div class="av" id="mineAv">U</div>
+      <div class="pi">
+        <h4 id="mineName">User</h4>
+        <p>ID: <span id="mineId" style="color:var(--gold)">--</span></p>
+        <p>📱 <span id="minePhone">--</span></p>
+      </div>
+    </div>
+
+    <div class="hero" style="margin-bottom:14px">
+      <h4>WALLET BALANCE</h4>
+      <div class="bal" id="mineBal">₹0.00</div>
+      <div class="actions">
+        <button id="mineRecharge">⬆ Recharge</button>
+        <button class="alt" id="mineWithdraw">⬇ Withdraw</button>
+      </div>
+    </div>
+
+    <div class="stat-row">
+      <div class="stat"><div class="v" id="minePromo">₹0</div><div class="l">Promotion Income</div></div>
+      <div class="stat"><div class="v" id="mineInvest">₹0</div><div class="l">Invest Income</div></div>
+      <div class="stat"><div class="v" id="mineTotal">₹0</div><div class="l">Total Earned</div></div>
+    </div>
+
+    <div class="sec-title"><h3>Account</h3></div>
+    <div class="row" data-mine="bind"><div class="l"><div class="ri">🏦</div><div><div class="t">Bind Bank Account</div><div class="s">Required for withdrawal</div></div></div><div class="r" id="bindStatus">›</div></div>
+    <div class="row" data-mine="bill"><div class="l"><div class="ri">📄</div><div><div class="t">Bill Details</div><div class="s">All transactions</div></div></div><div class="r">›</div></div>
+    <div class="row" data-mine="recRec"><div class="l"><div class="ri">⬆</div><div><div class="t">Recharge Record</div><div class="s">Deposit history</div></div></div><div class="r">›</div></div>
+    <div class="row" data-mine="wdRec"><div class="l"><div class="ri">⬇</div><div><div class="t">Withdrawal Record</div><div class="s">Payout history</div></div></div><div class="r">›</div></div>
+    <div class="row" data-mine="team"><div class="l"><div class="ri">👥</div><div><div class="t">My Team</div><div class="s">Referral network</div></div></div><div class="r">›</div></div>
+    <div class="row" data-mine="about"><div class="l"><div class="ri">ℹ️</div><div><div class="t">About Us</div><div class="s">Company info</div></div></div><div class="r">›</div></div>
+    <div class="row" data-mine="help"><div class="l"><div class="ri">💬</div><div><div class="t">Help & Support</div><div class="s">24×7 service</div></div></div><div class="r">›</div></div>
+    <div class="row" data-mine="logout" style="border-color:rgba(239,68,68,.3)"><div class="l"><div class="ri" style="background:rgba(239,68,68,.15);color:var(--red)">⏻</div><div><div class="t" style="color:var(--red)">Logout</div><div class="s">Sign out securely</div></div></div><div class="r">›</div></div>
+    <div style="height:60px"></div>
+  </div>
+
+  <!-- ============ SUB-PAGE: RECHARGE ============ -->
+  <div class="page" id="pageRecharge">
+    <button class="btn-ghost" id="backFromRecharge" style="width:auto;padding:8px 14px;margin-bottom:14px">← Back</button>
+    <h2 style="font-size:18px;font-weight:700;margin-bottom:6px">⬆ Recharge Wallet</h2>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px">
+      Minimum recharge: <b style="color:var(--gold)" id="minRechText">₹100</b>. Funds are credited within 5 minutes after UTR verification. Always use your own bank account or UPI to avoid delays. Do not share UPI ID with anyone.
+    </p>
+    <h4 style="font-size:13px;color:var(--muted);margin-bottom:10px">Select Payment Method</h4>
+    <div class="pm-list" id="pmList"></div>
+    <h4 style="font-size:13px;color:var(--muted);margin:14px 0 10px">Choose Amount</h4>
+    <div class="amount-chips" id="amountChips"></div>
+    <input type="number" min="100" placeholder="Or enter custom amount (₹)" class="input-box" id="rechAmount"/>
+    <button class="btn-primary" id="rechProceed">PROCEED TO PAY</button>
+    <div style="height:60px"></div>
+  </div>
+
+  <!-- ============ SUB-PAGE: PAY ============ -->
+  <div class="page" id="pagePay">
+    <button class="btn-ghost" id="backFromPay" style="width:auto;padding:8px 14px;margin-bottom:14px">← Cancel</button>
+    <div class="pay-card">
+      <div style="font-size:13px;color:var(--muted)">Amount to Pay</div>
+      <div class="amt" id="payAmt">₹0</div>
+      <div class="timer" id="payTimer">⏱ 10:00</div>
+      <div class="qr-fake" id="payQR"></div>
+      <div style="font-size:12px;color:var(--muted);margin:6px 0">Scan QR or pay to UPI ID below</div>
+      <div class="upi-line">
+        <span id="payUpi">9263558256@nyyes</span>
+        <button id="copyUpi">COPY</button>
+      </div>
+      <p style="font-size:11.5px;color:var(--muted);line-height:1.6;margin-top:10px;text-align:left">
+        <b style="color:var(--gold)">Instructions:</b><br>
+        1. Open any UPI app (PhonePe / GPay / Paytm / BHIM)<br>
+        2. Pay the exact amount above to UPI ID<br>
+        3. Copy the 12-digit UTR / Reference number from your payment receipt<br>
+        4. Enter UTR below and submit. Funds will be credited within 5 minutes after verification.
+      </p>
+      <div style="margin-top:14px;text-align:left">
+        <label style="font-size:12px;color:var(--muted)">Enter 12-digit UTR Number</label>
+        <input type="text" maxlength="12" placeholder="e.g. 412345678901" class="input-box" id="utrInput" style="margin-top:6px"/>
+        <button class="btn-primary" id="submitUtr">SUBMIT UTR</button>
+      </div>
+    </div>
+    <div style="height:60px"></div>
+  </div>
+
+  <!-- ============ SUB-PAGE: WITHDRAW ============ -->
+  <div class="page" id="pageWithdraw">
+    <button class="btn-ghost" id="backFromWd" style="width:auto;padding:8px 14px;margin-bottom:14px">← Back</button>
+    <h2 style="font-size:18px;font-weight:700;margin-bottom:6px">⬇ Withdraw Funds</h2>
+    <p style="font-size:12.5px;color:var(--muted);margin-bottom:14px" id="wdInfo">
+      Minimum withdrawal: <b style="color:var(--gold)" id="minWdText">₹200</b>. Processing time: <b style="color:var(--gold)" id="wdHoursText">10:00 AM - 06:00 PM IST (Mon-Sat)</b>. Withdrawals are credited to your linked bank account within 2-24 hours. A 3% service fee applies. Make sure your bank details are correct before submitting.
+    </p>
+    <div id="wdBankBox" class="row" style="cursor:default">
+      <div class="l"><div class="ri">🏦</div><div><div class="t" id="wdBankName">No bank linked</div><div class="s" id="wdBankAcc">Tap to add</div></div></div>
+      <div class="r" id="wdChangeBank" style="color:var(--gold);font-weight:700">Add</div>
+    </div>
+    <div class="hero" style="margin-top:14px">
+      <h4>AVAILABLE BALANCE</h4>
+      <div class="bal" id="wdAvail">₹0.00</div>
+    </div>
+    <input type="number" min="200" placeholder="Enter withdrawal amount" class="input-box" id="wdAmount" style="margin-top:14px"/>
+    <div class="amount-chips" id="wdChips"></div>
+    <div style="font-size:12px;color:var(--muted);margin-bottom:8px" id="wdFee">Service fee: ₹0 • You will receive: ₹0</div>
+    <button class="btn-primary" id="wdSubmit">SUBMIT REQUEST</button>
+    <div style="height:60px"></div>
+  </div>
+
+  <!-- ============ SUB-PAGE: GENERIC LIST (records / bill / team) ============ -->
+  <div class="page" id="pageList">
+    <button class="btn-ghost" id="backFromList" style="width:auto;padding:8px 14px;margin-bottom:14px">← Back</button>
+    <h2 id="listTitle" style="font-size:18px;font-weight:700;margin-bottom:14px">List</h2>
+    <div id="listBody"></div>
+    <div style="height:60px"></div>
+  </div>
+
+  <!-- BOTTOM TAB BAR -->
+  <div class="tabbar" id="tabbar">
+    <button class="active" data-tab="pageHome"><span class="ic">🏠</span>Home</button>
+    <button data-tab="pageIncome"><span class="ic">📈</span>Income</button>
+    <button data-tab="pageShare"><span class="ic">🤝</span>Share</button>
+    <button data-tab="pageMine"><span class="ic">👤</span>Mine</button>
+  </div>
+</div>
+
+<script src="js/common.js"></script>
+<script src="js/home.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
