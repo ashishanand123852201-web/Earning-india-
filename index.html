@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TechPulse — Daily News, Tech Updates & Smart Tools</title>
+<meta name="description" content="TechPulse delivers the latest news, tech updates, AI insights and handy online tools — all in one place.">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">Tech<span>Pulse</span></a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="menu">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="news.html">📰 Latest News</a></li>
+      <li><a href="tech.html">💻 Tech Updates</a></li>
+      <li><a href="tools.html">🧮 Tools</a></li>
+      <li><a href="about.html">ℹ️ About</a></li>
+      <li><a href="contact.html">📩 Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <h1>Stay Ahead With <span class="grad">TechPulse</span></h1>
+    <p>Daily news, breaking tech updates, AI insights and handy calculators — your one-stop destination for what matters today.</p>
+    <div class="hero-cta">
+      <a href="news.html" class="btn btn-primary">Read Latest News</a>
+      <a href="tools.html" class="btn btn-ghost">Try Free Tools</a>
+    </div>
+  </div>
+</section>
+
+<!-- Ad: Top banner -->
+<div class="container" style="padding-top:18px;padding-bottom:0">
+  <div class="ad-slot ad-banner">Ad Slot — Top Banner (PropellerAds)</div>
+</div>
+
+<main class="container">
+
+  <!-- Trending strip -->
+  <h2 class="section-title">🔥 Trending Now</h2>
+  <p class="section-sub">What everyone's reading right now</p>
+  <div class="trending">
+    <a class="trend-pill" href="news.html">🚀 SpaceX Starlink Launch</a>
+    <a class="trend-pill" href="tech.html">🤖 GPT-6 Released</a>
+    <a class="trend-pill" href="tools/bmi.html">⚖️ BMI Calculator</a>
+    <a class="trend-pill" href="tech.html">📱 iPhone 17 Pro Leaks</a>
+    <a class="trend-pill" href="news.html">💹 Markets Hit Records</a>
+    <a class="trend-pill" href="tech.html">💰 Side Hustles 2026</a>
+    <a class="trend-pill" href="tools/random.html">🎲 Random Number</a>
+  </div>
+
+  <!-- Latest news cards -->
+  <h2 class="section-title" style="margin-top:50px">📰 Latest News</h2>
+  <p class="section-sub">Handpicked headlines from around the world</p>
+  <div class="grid" id="latestNews"></div>
+
+  <!-- Ad: middle -->
+  <div class="ad-slot ad-medium">Ad Slot — Middle Content (PropellerAds)</div>
+
+  <!-- Tech updates preview -->
+  <h2 class="section-title">💻 Tech Updates</h2>
+  <p class="section-sub">Apps, AI, mobiles and earning tips</p>
+  <div class="grid" id="techPreview"></div>
+
+  <!-- Tools preview -->
+  <h2 class="section-title" style="margin-top:50px">🧮 Smart Tools</h2>
+  <p class="section-sub">Free calculators you can use right away</p>
+  <div class="grid">
+    <a href="tools/bmi.html" class="tool-card">
+      <div class="tool-icon">⚖️</div>
+      <h3>BMI Calculator</h3>
+      <p>Check if your weight is in the healthy range based on your height.</p>
+    </a>
+    <a href="tools/age.html" class="tool-card">
+      <div class="tool-icon">🎂</div>
+      <h3>Age Calculator</h3>
+      <p>Find your exact age in years, months and days from your birth date.</p>
+    </a>
+    <a href="tools/random.html" class="tool-card">
+      <div class="tool-icon">🎲</div>
+      <h3>Random Number</h3>
+      <p>Generate random numbers within any custom range you choose.</p>
+    </a>
+    <a href="tools/calculator.html" class="tool-card">
+      <div class="tool-icon">%</div>
+      <h3>Percentage Tool</h3>
+      <p>Quickly calculate percentages, ratios and percentage changes.</p>
+    </a>
+  </div>
+
+  <!-- Ad: footer area -->
+  <div class="ad-slot ad-banner">Ad Slot — Footer (PropellerAds)</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div>
+      <h5 class="brand" style="font-size:1.3rem">Tech<span>Pulse</span></h5>
+      <p style="margin-top:8px">Your daily dose of news, tech and useful tools — fresh updates every single day.</p>
+    </div>
+    <div>
+      <h5>Explore</h5>
+      <ul>
+        <li><a href="news.html">Latest News</a></li>
+        <li><a href="tech.html">Tech Updates</a></li>
+        <li><a href="tools.html">All Tools</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Company</h5>
+      <ul>
+        <li><a href="about.html">About Us</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+    <div>
+      <h5>Stay Updated</h5>
+      <p>Bookmark TechPulse and visit daily for fresh stories.</p>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2026 TechPulse. All rights reserved.</span>
+    <span>Built with ❤️ for curious minds</span>
+  </div>
+</footer>
+
+<script src="script.js"></script>
+<script>
+  loadNews('latestNews', 6);
+  renderTech('techPreview', TECH_DB.slice(0,3));
+</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

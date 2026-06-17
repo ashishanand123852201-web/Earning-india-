@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Tech Updates — Apps, AI & Earning Tips | TechPulse</title>
+<meta name="description" content="Latest mobile apps, AI tools, internet tips and online-earning ideas — curated daily by TechPulse.">
+<link rel="stylesheet" href="style.css">
+<style>
+  .filter-bar{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:24px}
+  .filter-chip{
+    background:var(--surface);border:1px solid var(--border);color:var(--text);
+    padding:8px 16px;border-radius:30px;cursor:pointer;font-size:.9rem;transition:.2s;
+  }
+  .filter-chip:hover{border-color:var(--accent);color:var(--accent)}
+  .filter-chip.active{background:linear-gradient(90deg,var(--accent),var(--accent-2));color:#0a0a0f;border-color:transparent;font-weight:600}
+</style>
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="index.html" class="brand">Tech<span>Pulse</span></a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="menu">☰</button>
+    <ul class="nav-menu">
+      <li><a href="index.html">🏠 Home</a></li>
+      <li><a href="news.html">📰 Latest News</a></li>
+      <li><a href="tech.html">💻 Tech Updates</a></li>
+      <li><a href="tools.html">🧮 Tools</a></li>
+      <li><a href="about.html">ℹ️ About</a></li>
+      <li><a href="contact.html">📩 Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="container">
+
+  <h1 class="section-title">💻 Tech Updates</h1>
+  <p class="section-sub">Apps, AI tools, internet tips and online-earning ideas.</p>
+
+  <div class="ad-slot ad-banner">Ad Slot — Top Banner (PropellerAds)</div>
+
+  <div class="filter-bar">
+    <button class="filter-chip active" data-cat="all" onclick="filterTechPosts('all')">All</button>
+    <button class="filter-chip" data-cat="apps" onclick="filterTechPosts('apps')">📱 New Apps</button>
+    <button class="filter-chip" data-cat="ai" onclick="filterTechPosts('ai')">🤖 AI Tools</button>
+    <button class="filter-chip" data-cat="tips" onclick="filterTechPosts('tips')">🌐 Internet Tips</button>
+    <button class="filter-chip" data-cat="earning" onclick="filterTechPosts('earning')">💰 Earning</button>
+  </div>
+
+  <div class="grid" id="techGrid"></div>
+
+  <div class="ad-slot ad-medium">Ad Slot — Bottom (PropellerAds)</div>
+
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><h5 class="brand" style="font-size:1.3rem">Tech<span>Pulse</span></h5><p style="margin-top:8px">Your daily dose of news, tech and useful tools.</p></div>
+    <div><h5>Explore</h5><ul><li><a href="news.html">Latest News</a></li><li><a href="tech.html">Tech Updates</a></li><li><a href="tools.html">All Tools</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="about.html">About Us</a></li><li><a href="contact.html">Contact</a></li></ul></div>
+    <div><h5>Stay Updated</h5><p>Bookmark TechPulse and visit daily.</p></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 TechPulse. All rights reserved.</span><span>Built with ❤️ for curious minds</span></div>
+</footer>
+
+<script src="script.js"></script>
+<script>filterTechPosts('all');</script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Random Number Generator — TechPulse</title>
+<meta name="description" content="Generate random numbers within any custom range — free, fast and simple.">
+<link rel="stylesheet" href="../style.css">
+</head>
+<body>
+
+<header class="site-header">
+  <div class="nav-wrap">
+    <a href="../index.html" class="brand">Tech<span>Pulse</span></a>
+    <button class="menu-toggle" onclick="toggleMenu()" aria-label="menu">☰</button>
+    <ul class="nav-menu">
+      <li><a href="../index.html">🏠 Home</a></li>
+      <li><a href="../news.html">📰 Latest News</a></li>
+      <li><a href="../tech.html">💻 Tech Updates</a></li>
+      <li><a href="../tools.html">🧮 Tools</a></li>
+      <li><a href="../about.html">ℹ️ About</a></li>
+      <li><a href="../contact.html">📩 Contact</a></li>
+    </ul>
+  </div>
+</header>
+
+<main class="tool-page">
+  <div class="crumbs" style="color:var(--muted);font-size:.85rem;margin-bottom:10px"><a href="../tools.html">← All tools</a></div>
+  <h1 class="section-title">🎲 Random Number Generator</h1>
+  <p class="section-sub">Pick a range and we'll generate a random number inside it.</p>
+
+  <div class="ad-slot ad-banner">Ad Slot — Top (PropellerAds)</div>
+
+  <div class="tool-panel">
+    <div class="form-row row-2">
+      <div>
+        <label for="rngMin">Minimum</label>
+        <input id="rngMin" type="number" value="1">
+      </div>
+      <div>
+        <label for="rngMax">Maximum</label>
+        <input id="rngMax" type="number" value="100">
+      </div>
+    </div>
+    <button class="btn btn-primary" onclick="generateRandomNumber()" style="width:100%">Generate Number</button>
+    <div id="rngResult" class="result-box"></div>
+  </div>
+
+  <div class="ad-slot ad-banner">Ad Slot — Bottom (PropellerAds)</div>
+</main>
+
+<footer class="site-footer">
+  <div class="footer-grid">
+    <div><h5 class="brand" style="font-size:1.3rem">Tech<span>Pulse</span></h5><p style="margin-top:8px">Your daily dose of news, tech and useful tools.</p></div>
+    <div><h5>Explore</h5><ul><li><a href="../news.html">Latest News</a></li><li><a href="../tech.html">Tech Updates</a></li><li><a href="../tools.html">All Tools</a></li></ul></div>
+    <div><h5>Company</h5><ul><li><a href="../about.html">About Us</a></li><li><a href="../contact.html">Contact</a></li></ul></div>
+    <div><h5>Stay Updated</h5><p>Bookmark TechPulse and visit daily.</p></div>
+  </div>
+  <div class="footer-bottom"><span>© 2026 TechPulse. All rights reserved.</span><span>Built with ❤️</span></div>
+</footer>
+
+<script src="../script.js"></script>
+<script defer src="https://static.cloudflareinsights.com/beacon.min.js/v833ccba57c9e4d2798f2e76cebdd09a11778172276447" integrity="sha512-57MDmcccJXYtNnH+ZiBwzC4jb2rvgVCEokYN+L/nLlmO8rfYT/gIpW2A569iJ/3b+0UEasghjuZH/ma3wIs/EQ==" data-cf-beacon='{"version":"2024.11.0","token":"75124c326cb447fe934cde04713ae013","r":1,"server_timing":{"name":{"cfCacheStatus":true,"cfEdge":true,"cfExtPri":true,"cfL4":true,"cfOrigin":true,"cfSpeedBrain":true},"location_startswith":null}}' crossorigin="anonymous"></script>
+</body>
+</html>
